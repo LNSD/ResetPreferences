@@ -7,8 +7,6 @@ import android.os.Build;
 import android.preference.Preference;
 import android.util.AttributeSet;
 
-import es.lnsd.resetpreference.R;
-
 /**
  * ResetPreferences
  * Copyright (C) 2016 Lorenzo Delgado.
@@ -22,30 +20,29 @@ public class ResetBooleanPreference extends Preference {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ResetBooleanPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-
-        final TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.ResetBooleanPreference, defStyleAttr, defStyleRes);
-
-        if (attributes != null) {
-            defaultValue = attributes.getBoolean(R.styleable.ResetBooleanPreference_resetBooleanValue, false);
-            attributes.recycle();
-        }
     }
 
     public ResetBooleanPreference(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
+        super(context, attrs, defStyleAttr);
     }
 
     public ResetBooleanPreference(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
     }
 
     public ResetBooleanPreference(Context context) {
-        this(context, null);
+        super(context);
     }
     //endregion
 
     @Override
+    protected Object onGetDefaultValue(TypedArray a, int index) {
+        defaultValue = a.getBoolean(index, true);
+        return defaultValue;
+    }
+
+    @Override
     protected void onClick() {
-    persistBoolean(defaultValue);
+        persistBoolean(defaultValue);
     }
 }
