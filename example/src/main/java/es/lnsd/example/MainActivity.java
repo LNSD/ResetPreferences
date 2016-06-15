@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(!sharedPreferences.contains(getString(R.string.boolean_key))) {
             booleanValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
-            booleanValue.setText("Unknown");
+            booleanValue.setText(getString(R.string.not_set_value));
         } else {
             booleanValue.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             boolean valueBoolean = sharedPreferences.getBoolean(getString(R.string.boolean_key), false);
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(!sharedPreferences.contains(getString(R.string.integer_key))) {
             integerValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
-            integerValue.setText("Unknown");
+            integerValue.setText(getString(R.string.not_set_value));
         } else {
             integerValue.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             int valueInteger = sharedPreferences.getInt(getString(R.string.integer_key), -1);
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(!sharedPreferences.contains(getString(R.string.float_key))) {
             floatValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
-            floatValue.setText("Unknown");
+            floatValue.setText(getString(R.string.not_set_value));
         } else {
             floatValue.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             float valueFloat = sharedPreferences.getFloat(getString(R.string.float_key), -1f);
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(!sharedPreferences.contains(getString(R.string.string_key))) {
             stringValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
-            stringValue.setText("Unknown");
+            stringValue.setText(getString(R.string.not_set_value));
         } else {
             stringValue.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             String valueString = sharedPreferences.getString(getString(R.string.string_key), null);

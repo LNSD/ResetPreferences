@@ -14,7 +14,7 @@ import android.util.AttributeSet;
  */
 public class ResetStringPreference extends Preference {
 
-    private String defaultValue = null;
+    private String defaultValue;
 
     //region Constructors
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

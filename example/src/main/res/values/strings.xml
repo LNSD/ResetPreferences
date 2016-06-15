@@ -9,6 +9,7 @@
     <string name="float_title">Float &lt;float_key&gt;</string>
     <string name="string_title">String &lt;string_key&gt;</string>
     <string name="unknown_value">Unknown</string>
+    <string name="not_set_value">Not set</string>
     <string name="apply_button">Apply</string>
 
     <!-- Strings related to Settings -->
