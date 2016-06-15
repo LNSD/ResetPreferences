@@ -96,5 +96,3 @@ captures/
 
 # Keystore files
 *.jks
-example/libs/
-example/src/main/res/drawable/
