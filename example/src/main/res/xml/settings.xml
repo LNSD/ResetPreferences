@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <es.lnsd.resetpreferences.ResetBooleanPreference
+        android:key="cool_boolean"
+        android:title="This is a very cool title"
+        android:summary="Thi summary is the top of the summaries."
+        android:defaultValue="true" />
+
+</PreferenceScreen>

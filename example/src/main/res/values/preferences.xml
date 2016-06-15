@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="boolean_key">boolean_key</string>
+    <string name="integer_key">integer_key</string>
+    <string name="float_key">float_key</string>
+    <string name="string_key">string_key</string>
+</resources>
