@@ -16,6 +16,7 @@
             android:title="@string/pref_clear_boolean_title"
             android:summary="@string/pref_clear_boolean_summary"
             app:toastText="@string/pref_clear_boolean_toast" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_integer_header">
@@ -32,6 +33,7 @@
             android:title="@string/pref_clear_integer_title"
             android:summary="@string/pref_clear_integer_summary"
             app:toastText="@string/pref_clear_integer_toast" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_float_header">
@@ -48,6 +50,7 @@
             android:title="@string/pref_clear_float_title"
             android:summary="@string/pref_clear_float_summary"
             app:toastText="@string/pref_clear_float_toast" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_string_header">
@@ -64,6 +67,7 @@
             android:title="@string/pref_clear_string_title"
             android:summary="@string/pref_clear_string_summary"
             app:toastText="@string/pref_clear_string_toast" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

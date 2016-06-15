@@ -1,4 +1,4 @@
-package es.lnsd.example;
+package es.lnsd.example.main;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import es.lnsd.example.R;
 import es.lnsd.example.settings.SettingsActivity;
 import timber.log.Timber;
 
