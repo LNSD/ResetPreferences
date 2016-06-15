@@ -3,10 +3,14 @@ package es.lnsd.resetpreferences;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
+import android.widget.Toast;
+
+import es.lnsd.resetpreference.R;
 
 /**
  * ResetPreferences
@@ -15,28 +19,47 @@ import android.util.AttributeSet;
  */
 public class ClearPreference extends Preference {
 
+    private String toastText = "";
+
     //region Constructors
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ClearPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        parseAttributes(context, attrs);
     }
 
     public ClearPreference(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        parseAttributes(context, attrs);
     }
 
     public ClearPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+        parseAttributes(context, attrs);
     }
 
     public ClearPreference(Context context) {
-        super(context);
+        this(context, null);
+    }
+
+    private void parseAttributes(Context context, AttributeSet attrs) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ResetPreference);
+        toastText = typedArray.getString(R.styleable.ResetPreference_toastText);
+        typedArray.recycle();
     }
     //endregion
+
+    public void setToastText(String toastText) {
+        this.toastText = toastText;
+    }
 
     @Override
     protected void onClick() {
         removePreference();
+
+        if (!toastText.isEmpty()) {
+            Toast.makeText(getContext(), toastText, Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**

@@ -19,34 +19,42 @@
 
     <string name="pref_reset_boolean_title">Reset</string>
     <string name="pref_reset_boolean_summary">Reset boolean preference to default value (true).</string>
+    <string name="pref_reset_boolean_toast">Reset boolean preference value</string>
 
     <string name="pref_clear_boolean_title">Clear</string>
     <string name="pref_clear_boolean_summary">Remove boolean key from Shared Preferences</string>
+    <string name="pref_clear_boolean_toast">Boolean key removed</string>
 
     <!-- Integer preference -->
     <string name="pref_integer_header">Integer preference</string>
 
     <string name="pref_reset_integer_title">Reset</string>
     <string name="pref_reset_integer_summary">Reset integer preference to default value (42).</string>
+    <string name="pref_reset_integer_toast">Reset integer preference value</string>
 
     <string name="pref_clear_integer_title">Clear</string>
     <string name="pref_clear_integer_summary">Remove integer key from Shared Preferences</string>
+    <string name="pref_clear_integer_toast">Integer key removed</string>
 
     <!-- Float preference -->
     <string name="pref_float_header">Float preference</string>
 
     <string name="pref_reset_float_title">Reset</string>
     <string name="pref_reset_float_summary">Reset float preference to default value (3.1416)</string>
+    <string name="pref_reset_float_toast">Reset float preference value</string>
 
     <string name="pref_clear_float_title">Clear</string>
     <string name="pref_clear_float_summary">Remove float key from Shared Preferences</string>
+    <string name="pref_clear_float_toast">Float key removed</string>
 
     <!-- String preference -->
     <string name="pref_string_header">String preference</string>
 
     <string name="pref_reset_string_title">Reset</string>
     <string name="pref_reset_string_summary">Reset string preference to default value (Cthulhu).</string>
+    <string name="pref_reset_string_toast">Reset string preference value</string>
 
     <string name="pref_clear_string_title">Clear</string>
     <string name="pref_clear_string_summary">Remove string key from Shared Preferences</string>
+    <string name="pref_clear_string_toast">String key removed</string>
 </resources>

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory android:title="@string/pref_boolean_header">
 
-    <es.lnsd.resetpreferences.ResetBooleanPreference
-        android:key="@string/boolean_key"
-        android:title="@string/pref_reset_boolean_title"
-        android:summary="@string/pref_reset_boolean_summary"
-        android:defaultValue="true" />
+        <es.lnsd.resetpreferences.ResetBooleanPreference
+            android:key="@string/boolean_key"
+            android:title="@string/pref_reset_boolean_title"
+            android:summary="@string/pref_reset_boolean_summary"
+            android:defaultValue="true"
+            app:toastText="@string/pref_reset_boolean_toast" />
 
         <es.lnsd.resetpreferences.ClearPreference
             android:key="@string/boolean_key"
             android:title="@string/pref_clear_boolean_title"
-            android:summary="@string/pref_clear_boolean_summary" />
+            android:summary="@string/pref_clear_boolean_summary"
+            app:toastText="@string/pref_clear_boolean_toast" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_integer_header">
@@ -21,12 +24,14 @@
             android:key="@string/integer_key"
             android:title="@string/pref_reset_integer_title"
             android:summary="@string/pref_reset_integer_summary"
-            android:defaultValue="42" />
+            android:defaultValue="42"
+            app:toastText="@string/pref_reset_integer_toast" />
 
         <es.lnsd.resetpreferences.ClearPreference
             android:key="@string/integer_key"
             android:title="@string/pref_clear_integer_title"
-            android:summary="@string/pref_clear_integer_summary" />
+            android:summary="@string/pref_clear_integer_summary"
+            app:toastText="@string/pref_clear_integer_toast" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_float_header">
@@ -35,12 +40,14 @@
             android:key="@string/float_key"
             android:title="@string/pref_reset_float_title"
             android:summary="@string/pref_reset_float_summary"
-            android:defaultValue="3.1416" />
+            android:defaultValue="3.1416"
+            app:toastText="@string/pref_reset_float_toast" />
 
         <es.lnsd.resetpreferences.ClearPreference
             android:key="@string/float_key"
             android:title="@string/pref_clear_float_title"
-            android:summary="@string/pref_clear_float_summary" />
+            android:summary="@string/pref_clear_float_summary"
+            app:toastText="@string/pref_clear_float_toast" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_string_header">
@@ -49,12 +56,14 @@
             android:key="@string/string_key"
             android:title="@string/pref_reset_string_title"
             android:summary="@string/pref_reset_string_summary"
-            android:defaultValue="Cthulhu" />
+            android:defaultValue="Cthulhu"
+            app:toastText="@string/pref_reset_string_toast" />
 
         <es.lnsd.resetpreferences.ClearPreference
             android:key="@string/string_key"
             android:title="@string/pref_clear_string_title"
-            android:summary="@string/pref_clear_string_summary" />
+            android:summary="@string/pref_clear_string_summary"
+            app:toastText="@string/pref_clear_string_toast" />
     </PreferenceCategory>
 
 </PreferenceScreen>
