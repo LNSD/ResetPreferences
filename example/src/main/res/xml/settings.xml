@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory android:title="@string/pref_boolean_header">
+
     <es.lnsd.resetpreferences.ResetBooleanPreference
-        android:key="cool_boolean"
-        android:title="This is a very cool title"
-        android:summary="Thi summary is the top of the summaries."
+        android:key="@string/boolean_key"
+        android:title="@string/pref_reset_boolean_title"
+        android:summary="@string/pref_reset_boolean_summary"
         android:defaultValue="true" />
+
+        <es.lnsd.resetpreferences.ClearPreference
+            android:key="@string/boolean_key"
+            android:title="@string/pref_clear_boolean_title"
+            android:summary="@string/pref_clear_boolean_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_integer_header">
+
+        <es.lnsd.resetpreferences.ResetIntegerPreference
+            android:key="@string/integer_key"
+            android:title="@string/pref_reset_integer_title"
+            android:summary="@string/pref_reset_integer_summary"
+            android:defaultValue="42" />
+
+        <es.lnsd.resetpreferences.ClearPreference
+            android:key="@string/integer_key"
+            android:title="@string/pref_clear_integer_title"
+            android:summary="@string/pref_clear_integer_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_float_header">
+
+        <es.lnsd.resetpreferences.ResetFloatPreference
+            android:key="@string/float_key"
+            android:title="@string/pref_reset_float_title"
+            android:summary="@string/pref_reset_float_summary"
+            android:defaultValue="3.1416" />
+
+        <es.lnsd.resetpreferences.ClearPreference
+            android:key="@string/float_key"
+            android:title="@string/pref_clear_float_title"
+            android:summary="@string/pref_clear_float_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_string_header">
+
+        <es.lnsd.resetpreferences.ResetStringPreference
+            android:key="@string/string_key"
+            android:title="@string/pref_reset_string_title"
+            android:summary="@string/pref_reset_string_summary"
+            android:defaultValue="Cthulhu" />
+
+        <es.lnsd.resetpreferences.ClearPreference
+            android:key="@string/string_key"
+            android:title="@string/pref_clear_string_title"
+            android:summary="@string/pref_clear_string_summary" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

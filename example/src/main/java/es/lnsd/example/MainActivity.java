@@ -18,6 +18,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import es.lnsd.example.settings.SettingsActivity;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE = 0x00;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        updateTextviewValues();
+        refreshTextViewValues();
     }
 
     //region Toolbar
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_settings:
                 Intent intent = new Intent(getBaseContext(), SettingsActivity.class);
                 startActivityForResult(intent, SettingsActivity.REQUEST_CODE);
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.apply_button)
     public void onApplyButtonClick(Button button) {
         updateStoredValues();
-        updateTextviewValues();
+        refreshTextViewValues();
         clearEditText();
     }
 
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case SettingsActivity.REQUEST_CODE:
                 if (resultCode == Activity.RESULT_OK) {
-                    updateTextviewValues();
+                    refreshTextViewValues();
                 }
                 break;
             default:
@@ -107,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void updateTextviewValues() {
+    private void refreshTextViewValues() {
 
         if(!sharedPreferences.contains(getString(R.string.boolean_key))) {
             booleanValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
             booleanValue.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             boolean valueBoolean = sharedPreferences.getBoolean(getString(R.string.boolean_key), false);
             booleanValue.setText((valueBoolean)?"true":"false");
+            booleanInput.setChecked(valueBoolean);
         }
 
         if(!sharedPreferences.contains(getString(R.string.integer_key))) {
@@ -144,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
             String valueString = sharedPreferences.getString(getString(R.string.string_key), null);
             stringValue.setText(valueString);
         }
+
+        Timber.d("TextView values refreshed.");
     }
 
     private void updateStoredValues() {

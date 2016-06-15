@@ -1,6 +1,7 @@
 package es.lnsd.example.settings;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.support.v4.app.NavUtils;
@@ -41,10 +42,19 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         int id = item.getItemId();
         if (id == android.R.id.home) {
             if (!super.onMenuItemSelected(featureId, item)) {
+                setResult(Activity.RESULT_OK);
                 NavUtils.navigateUpFromSameTask(this);
+                overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
             }
             return true;
         }
         return super.onMenuItemSelected(featureId, item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setResult(Activity.RESULT_OK);
+        super.onBackPressed();
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
     }
 }
