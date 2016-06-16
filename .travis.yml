@@ -1,27 +1,20 @@
 language: android
 jdk:
-    - oraclejdk7
+- oraclejdk7
 
 android:
   components:
-    # Use the latest revision of Android SDK Tools
-    - tools
-    - platform-tools
-
-    # The BuildTools version used by your project
-    - build-tools-23.0.3
-
-    # Target SDK version used to compile the project
-    - android-23
-
-    # Additional components
-    - extra-android-m2repository
+  - tools
+  - platform-tools
+  - build-tools-23.0.3
+  - android-23
+  - extra-android-m2repository
 
 script:
-  - ./gradlew checkstyle
-  - ./gradlew assembleDebug
+  - "./gradlew checkstyle"
+  - "./gradlew assembleDebug"
 
 notifications:
   email: false
   slack:
-    secure: dDqWAUl0Uf4JejLblaLqTZFb++9BLJvjhhdkgngD0M4TRk8trYgZkyuSNbGFwLA7rHlCDNYN9ggXLkZiirinykRns8x5GrOFfypun7QRlWjFrefiFlow1aA+Tq/8dpgfRSMs0mhTFc4TiszHXuEiCKp+Who0LlsOfFY3N6Jb2OlxjVyog1uMBI2GTWjMixpcaSWxOfGsjOvjN4U6vRHOeCgWK1JE2RglbVUQcuvmQEuxJBQTiBJmmIlX+kzEkeM9AVEaBb4TIIgqBbZtcQTtCtsnQJcbJVRvmL664UH93wMRECfbtH0Jeh26YpnuSQw3HPA2Nhlf7xli1p60TMjpJ/ozSpNUetyUu9OnJJUlO3TJo/9SpQjSL4eDztAkNtVAB2bx5RN1J/qNTl/6oNjTwUnTCohg7nJlzM7W5CvnxkQF/BVtWOnLyhltJNuqOoAYuqCHj3iBgXfip+cCQbzhDRfImGB5AYQK+fbqbCMvAuEGvB+ZSLQPFF99Kq42rOxzoLTa10RzGYHiWCGBh9KkHoZ/dD4OJX4QgPF23kHOq61ZZ3fGpMY2h9E9efStlQGZpP0BqUbZ+e5wn0hYXiLb4AtEyTobJ7OOjd6QhtAoM0ekOWoiIZn69endzpP2gKNaLWSf9ao14jEzpGkyif/sIqqAtxUfCfXSJ0C0PuthU1I=
+    secure: SYzzWwJCt5A82gVyDzRxD9QWZ5U3jkfZaE8nu1GufLct6L+JpX6vNNOR1GfQ6RjfAMh4i2LecWfwA500Dkz4Jq7TouDU70Oy/532aExlKnEacYP07g8PSn8Z2Yfbpy9xQ5NmJrfRrDWIZikrJb3o+MhRIxTIegtDnlrXtAYeQ86tzr5tPlpjmTk2qgUQcS2YjR52GxcOPVcsg1gYJdm+hxB/ukMZU8UGxyhFCU+FBEPQKfdwsUwSc7oWHkLn+Wg84agyvat2AGsqxax8wt5jeZUKvokGSStVT6PD6AFgQAiD6acbsg3Wiagavki/BmcDcuZXFJ8RB2Z1N2oBRVjg/fyhZvgo15G9l5L+kn+FET9BHGbxuuVhfS9dl8nM7us7r6ZqRIpEEyAMDxaDVG5kl0TqVPW4Oea785LB5efjMW6xNkmHKNoeLvPvuPeZYiZZzPzA09gdhysaQ3Kcr6C8aar0i2PvEQxj2gDVtpx0WYhiHtqkanmdUHQ4XbiIKwJTudPO/U9viSCw0Kulghdij86CvopGMHy8lZNZeuHeQroqFvTHUn3+S6ZFUBwJJIyDGC7yVyLUlVslxNp+UYsuuepasbAFc9HXFISCbToXe4uK2fQOplmur9PkEDLjxZOWmmd7Q8U2i8I9ptQ+0MaF4K+KFtMqqVkDs0f11QR2DQs=
