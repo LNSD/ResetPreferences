@@ -18,6 +18,7 @@ android:
     - extra-android-m2repository
 
 script:
+  - ./gradlew checkstyle
   - ./gradlew assembleDebug
 
 notifications:

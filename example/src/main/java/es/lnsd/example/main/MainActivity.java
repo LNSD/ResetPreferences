@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     //endregion
 
     private static SharedPreferences sharedPreferences;
-    private static SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,17 +111,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void refreshTextViewValues() {
 
-        if(!sharedPreferences.contains(getString(R.string.boolean_key))) {
+        if (!sharedPreferences.contains(getString(R.string.boolean_key))) {
             booleanValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
             booleanValue.setText(getString(R.string.not_set_value));
         } else {
             booleanValue.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             boolean valueBoolean = sharedPreferences.getBoolean(getString(R.string.boolean_key), false);
-            booleanValue.setText((valueBoolean)?"true":"false");
+            booleanValue.setText((valueBoolean) ? "true" : "false");
             booleanInput.setChecked(valueBoolean);
         }
 
-        if(!sharedPreferences.contains(getString(R.string.integer_key))) {
+        if (!sharedPreferences.contains(getString(R.string.integer_key))) {
             integerValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
             integerValue.setText(getString(R.string.not_set_value));
         } else {
@@ -131,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             integerValue.setText(Integer.toString(valueInteger));
         }
 
-        if(!sharedPreferences.contains(getString(R.string.float_key))) {
+        if (!sharedPreferences.contains(getString(R.string.float_key))) {
             floatValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
             floatValue.setText(getString(R.string.not_set_value));
         } else {
@@ -140,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             floatValue.setText(Float.toString(valueFloat));
         }
 
-        if(!sharedPreferences.contains(getString(R.string.string_key))) {
+        if (!sharedPreferences.contains(getString(R.string.string_key))) {
             stringValue.setTextColor(getResources().getColor(android.R.color.holo_red_light));
             stringValue.setText(getString(R.string.not_set_value));
         } else {
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateStoredValues() {
-        editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putBoolean(getString(R.string.boolean_key), booleanInput.isChecked());
 
