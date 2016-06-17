@@ -57,7 +57,7 @@ public class ClearPreference extends Preference {
     protected void onClick() {
         removePreference();
 
-        if (!toastText.isEmpty()) {
+        if (toastText != null && !toastText.isEmpty()) {
             Toast.makeText(getContext(), toastText, Toast.LENGTH_SHORT).show();
         }
     }

@@ -62,7 +62,7 @@ public class ResetIntegerPreference extends Preference {
     protected void onClick() {
         persistInt(defaultValue);
 
-        if (!toastText.isEmpty()) {
+        if (toastText != null && !toastText.isEmpty()) {
             Toast.makeText(getContext(), toastText, Toast.LENGTH_SHORT).show();
         }
     }
