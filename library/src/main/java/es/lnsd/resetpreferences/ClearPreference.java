@@ -57,7 +57,7 @@ public class ClearPreference extends Preference {
     protected void onClick() {
         removePreference();
 
-        if (!toastText.isEmpty()) {
+        if (toastText != null && !toastText.isEmpty()) {
             Toast.makeText(getContext(), toastText, Toast.LENGTH_SHORT).show();
         }
     }
@@ -67,10 +67,8 @@ public class ClearPreference extends Preference {
      * <p>
      * This will check if this Preference is persistent, get an editor from
      * the {@link PreferenceManager}, remove the preference value, and check and commit.
-     *
-     * @return True if the Preference was removed.
      */
-    protected boolean removePreference() {
+    private void removePreference() {
         if (shouldPersist()) {
             SharedPreferences.Editor editor = getEditor();
             editor.remove(getKey());
@@ -83,8 +81,6 @@ public class ClearPreference extends Preference {
                 // an apply method.
                 editor.commit();
             }
-            return true;
         }
-        return false;
     }
 }

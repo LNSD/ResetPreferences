@@ -1,0 +1,21 @@
+language: android
+
+jdk:
+- oraclejdk7
+
+android:
+  components:
+  - tools
+  - platform-tools
+  - build-tools-23.0.3
+  - android-23
+  - extra-android-m2repository
+
+script:
+  - "./gradlew checkstyle"
+  - "./gradlew assembleDebug"
+
+notifications:
+  email: false
+  slack:
+    secure: CgO5Hcig8Emp7c4Jne/a1Uz+FiK6XF0l3y7wLd25QY4LLDROoLAJbY+ZdWEVRMOCrirkWaHR8Zm3/dDS7DvYvb3byafdzz6HxkcVPvGXVkN14jYd2j0nJYAGJ/UdTdyT8SBnz2dyxlV2IXQZicNQNGKRK1ich8EHbnwlZaivdcY85zSBaDZg8XWnrnouG/wb1KcFKk7cFwI1V6m3ssyYln4V2Hpod11zj2Vj0K/7qFqOtVtEmPuiBEtkZP8fOGZSVcbdLxr7LdNGuCidzFg+swpmzcXiTQ9pjryBH2qWJEp5llO8rkYMkgDDRUQXiDfeaPmTE9f4LUD5M4lqJ3KwIBrWpD14U0qMCeXR6Lzh80KIR/d/9TR+cZHl0mN1kSBadg9dSmNn7SogF4enzlMbx/ji2DjhIHPmCZxLX5hFi9wyt2TSaiY3mFZH/yE7CPWDB+4RHcLbcwKFNRCaMFoZcocuZNyjzM8zqn9LczGyts/hJqBgNZbduBvo3d54NgckGwpQOTb3aSN/gNaWOFvQqSKfhVO3iQGJOlhtlfBGtwKc6NDxshMIPW3E6K6JyvgfpFuJfwC5uAbAhgZvK8Dg4FuLezSBrnxtQnxmS4HJhhg1UELRubGetVMqMRuRyOIDCp3RoOw2PHQl+YH7DcbpK/f9X5ue+dKoVhLFdhkUR6k=

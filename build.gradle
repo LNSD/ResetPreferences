@@ -22,7 +22,27 @@ allprojects {
     }
 }
 
+subprojects {
+    // ------------ Checkstyle ---------------
+    apply plugin: 'checkstyle'
+
+    task checkstyle(type: Checkstyle) {
+        configFile file("${rootDir}/checkstyle.xml")
+        source 'src'
+        include '**/*.java'
+        exclude '**/gen/**'
+        classpath = files()
+
+        ignoreFailures false
+        showViolations true
+
+        reports {
+            xml.enabled = false
+            html.enabled = false
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-

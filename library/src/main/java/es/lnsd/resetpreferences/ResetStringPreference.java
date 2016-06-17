@@ -18,7 +18,6 @@ import es.lnsd.resetpreference.R;
 public class ResetStringPreference extends Preference {
 
     private String defaultValue;
-
     private String toastText = "";
 
     //region Constructors
@@ -63,7 +62,7 @@ public class ResetStringPreference extends Preference {
     protected void onClick() {
         persistString(defaultValue);
 
-        if (!toastText.isEmpty()) {
+        if (toastText != null && !toastText.isEmpty()) {
             Toast.makeText(getContext(), toastText, Toast.LENGTH_SHORT).show();
         }
     }
